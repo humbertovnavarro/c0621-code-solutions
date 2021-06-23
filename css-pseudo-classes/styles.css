@@ -1,0 +1,25 @@
+button {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 18px;
+}
+
+thead th {
+  background-color: black;
+  color: white;
+}
+
+tr:nth-child(odd) {
+  background-color: white;
+}
+
+tr:nth-child(even) {
+  background-color: lightgray;
+}
+
+button:hover {
+  color: white;
+  background-color: black;
+}
