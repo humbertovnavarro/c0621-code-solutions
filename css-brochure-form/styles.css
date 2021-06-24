@@ -1,0 +1,39 @@
+input,
+select {
+  display: block;
+  font-family: Brandon Grotesque, sans-serif;
+  width: 550px;
+  font-size: large;
+  color: lightgray;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  width: 200px;
+  height: 50px;
+  margin-left: auto;
+  border-radius: 10%;
+  background-color: salmon;
+  color: white;
+  font-size: large;
+}
+
+label {
+  font-family: Brandon Grotesque, sans-serif;
+}
+
+div {
+  margin-top: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+
+h1 {
+  color: salmon;
+  text-align: center;
+  font-family: Atlas Grotesque, sans-serif;
+}
