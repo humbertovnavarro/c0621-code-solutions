@@ -8,5 +8,5 @@ html {
 
   /* your code here */
   position: fixed;
-  left: calc(50% - (1rem * 10));
+  width: 100%;
 }
