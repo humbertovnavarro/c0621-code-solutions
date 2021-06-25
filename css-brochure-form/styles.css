@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+input,
+select {
+  display: block;
+  font-family: Atlas Grotesque, sans-serif;
+  width: 40rem;
+  height: 3rem;
+  font-size: 18px;
+  color: rgb(175, 175, 175);
+  border: 1px solid rgb(177, 177, 177);
+  border-radius: 6px;
+  padding-left: 15px;
+  margin-bottom: 25px;
+}
+
+select {
+  color: black;
+  font-weight: 500;
+  background-color: rgb(246, 246, 246);
+}
+
+button {
+  border: none;
+  width: 125px;
+  height: 50px;
+  margin-top: 15px;
+  border-radius: 25px;
+  background-color: #ec5d57;
+  color: white;
+  font-size: large;
+}
+
+label {
+  padding-left: 15px;
+  font-weight: 500;
+  font-family: Brandon Grotesque, sans-serif;
+}
+
+h2 {
+  color: #ec5d57;
+  text-align: center;
+  font-family: Brandon Grotesque, sans-serif;
+}
+
+.row {
+  display: flex;
+  justify-content: flex-end;
+}
