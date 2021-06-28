@@ -10,22 +10,6 @@ header {
   max-height: 32px;
 }
 
-footer a {
-  font-size: 16px;
-  margin-top: auto;
-  margin-bottom: auto;
-  color: grey;
-  font-family: 'Avenir', sans-serif;
-}
-
-header a {
-  font-size: 16px;
-  color: grey;
-  margin-top: auto;
-  margin-bottom: auto;
-  font-family: 'Avenir', sans-serif;
-}
-
 .row {
   display: flex;
 }
@@ -56,4 +40,25 @@ header a {
 
 .banner {
   background-color: grey;
+}
+
+footer .row {
+  height: 32px;
+}
+
+footer a {
+  font-size: 8px;
+  font-weight: bold;
+  margin-top: auto;
+  margin-bottom: auto;
+  color: grey;
+  font-family: 'Avenir', sans-serif;
+}
+
+header a {
+  font-size: 16px;
+  color: grey;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-family: 'Avenir', sans-serif;
 }
