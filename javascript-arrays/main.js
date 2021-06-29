@@ -11,7 +11,7 @@ for (var i = 0; i < colors.length; i++) {
 var america = 'America is ' + colors[0] + ', ' + colors[1] + ' and ' + colors[2];
 console.log(america);
 
-colors[3] = 'green';
+colors[2] = 'green';
 var mexico = 'Mexico is ' + colors[0] + ', ' + colors[1] + ' and ' + colors[2];
 console.log(mexico);
 console.log('Value of colors:', colors);
