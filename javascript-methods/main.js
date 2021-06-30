@@ -1,0 +1,12 @@
+var one = 1;
+var two = 2;
+var three = 3;
+var maximumValue = Math.max(one,two,three);
+console.log('Value of maximumValue:',maximumValue);
+var heroes = ['Doctor Strange','Deku','Iron Man', 'Captain America'];
+var randomNumber = Math.random();
+randomNumber *= heroes.length;
+var randomIndex = Math.floor(randomNumber);
+console.log('Value of randomIndexS:',randomIndex);
+var randomHero = heroes[randomIndex];
+console.log('Value of randomHero:',randomHero);
