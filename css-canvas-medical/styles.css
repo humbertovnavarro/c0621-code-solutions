@@ -70,6 +70,11 @@ address p {
   font-family: 'Tiempos Headline', serif;
 }
 
+.avenir-gray {
+  color:#525351;
+  font-family: 'Avenir',sans-serif;
+}
+
 .tiempos-gray {
   font-weight: 500;
   color: #525351;
@@ -95,6 +100,8 @@ address p {
 .location{
   margin-top: 2rem;
   margin-bottom: 2rem;
+  font-family: 'Tiempos', sans-serif;
+  color:#818181;
 }
 .flex {
   display: flex;
@@ -145,7 +152,7 @@ address p {
 .banner {
   line-height: 2;
   font-size: large;
-  background-color:#535353;
+  background-color:#818181;
   padding-top: 5rem;
   padding-bottom: 5rem;
   color: white;
@@ -156,8 +163,8 @@ address p {
 }
 .banner-heading {
   font-weight: 500;
-  font-size: 18px;
-  margin-bottom: 0.2rem;
+  font-size: 20px;
+  margin-bottom: 0.1rem;
 }
 .footer {
   margin-top: 3rem;
@@ -165,7 +172,7 @@ address p {
 }
 
 .footer a {
-  color: #535353;
+  color: #818181;
   margin-right: 5rem;
 }
 
