@@ -1,0 +1,43 @@
+body {
+  text-align: center;
+}
+
+
+h1 {
+  font-family: 'Barlow', sans-serif;
+  font-size: 300%;
+  font-weight: bolder;
+}
+
+.phone {
+  width: 200px;
+}
+.icon {
+  width: 200px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.col-fourth {
+  width: 25%;
+}
+
+.col-full {
+  width: 100%;
+}
+
+.container {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.infographic {
+}
