@@ -1,19 +1,26 @@
 body {
   text-align: center;
+  font-family: 'Barlow', sans-serif;
 }
 
+h2 {
+  font-family: 'Barlow', sans-serif;
+  font-size: 200%;
+  font-weight: bolder;
+}
 
 h1 {
   font-family: 'Barlow', sans-serif;
-  font-size: 300%;
+  font-size: 200%;
   font-weight: bolder;
 }
 
 .phone {
-  width: 200px;
+  width: 300px;
 }
+
 .icon {
-  width: 200px;
+  width: 80px;
 }
 
 .row {
@@ -21,11 +28,7 @@ h1 {
   justify-content: center;
   align-items: center;
 }
-.flex-column {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+
 .col-fourth {
   width: 25%;
 }
@@ -35,9 +38,6 @@ h1 {
 }
 
 .container {
-  margin-left: 2rem;
-  margin-right: 2rem;
-}
-
-.infographic {
+  margin-left: 11rem;
+  margin-right: 11rem;
 }
