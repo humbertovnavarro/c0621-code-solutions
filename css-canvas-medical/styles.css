@@ -1,0 +1,32 @@
+/*
+ custom grey: #525351
+ border color: #e7e9ec
+
+  font-family: 'Avenir';
+  font-style: normal;
+
+  font-family: 'Tiempos Headline';
+  font-style: normal;
+
+  font-family: 'Tiempos Headline';
+  font-style: italic;
+
+*/
+body {
+  font-family: 'Avenir', sans-serif;
+}
+
+.row {
+  display: flex;
+}
+
+.footer {
+  padding-left: 5rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer a {
+  color: #535353;
+  margin-right: 5rem;
+}
