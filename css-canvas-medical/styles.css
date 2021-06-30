@@ -12,16 +12,47 @@
   font-style: italic;
 
 */
+.logo {
+  height: 2rem;
+}
+
+
 body {
   font-family: 'Avenir', sans-serif;
 }
+address {
+      margin-top: 2rem;
+}
+address p {
+    margin: 0.5rem;
+    font-style: normal;
+    padding: 0;
+    font-family: 'Avenir', sans-serif;
+    color:white;
+}
 
 .row {
+  padding-left: 5rem;
+  padding-right: 5rem;
   display: flex;
 }
 
+.banner {
+  background-color:#535353;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  color: white;
+}
+.banner-link {
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+}
+.banner-heading {
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 0.2rem;
+}
 .footer {
-  padding-left: 5rem;
   margin-top: 3rem;
   margin-bottom: 3rem;
 }
@@ -29,4 +60,19 @@ body {
 .footer a {
   color: #535353;
   margin-right: 5rem;
+}
+
+.col-half {
+  width: 50%;
+}
+
+.col-fourth {
+  width: 25%;
+}
+
+.col-third {
+  width: calc(100% / 3);
+}
+.col-half-third {
+  width: calc(100% / 3 /2);
 }
