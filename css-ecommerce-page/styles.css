@@ -34,12 +34,11 @@ span {
 }
 .line-right {
   padding-right: 5px;
-  margin-right: 5px;
   border-right: 1px solid #d3d3d3;
 }
 
 .item-div {
-  height: 600px;
+  height: 500px;
   margin-left: 10px;
   margin-right: 10px;
 }
