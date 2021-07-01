@@ -85,8 +85,8 @@ button {
   padding-right: auto;
 }
 
-button :hover {
-  background-color :#d14c45;
+button:hover {
+  background-color:#d14c45;
   color: white;
   border: 5px solid rgb(160, 0, 80);
 }
