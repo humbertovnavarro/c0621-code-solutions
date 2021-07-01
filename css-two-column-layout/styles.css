@@ -1,0 +1,92 @@
+body {
+  font-family: 'Karla', sans-serif;
+
+}
+
+p {
+  color: rgb(77, 77, 77);
+  font-size: 1.2rem;
+  line-height: 150%;
+}
+.main-description {
+  padding-right: 13%;
+  padding-left: 13%;
+  margin-bottom: 4rem;
+}
+
+.main-header {
+  font-size: 4.5rem;
+  margin-top: 5rem;
+  margin-bottom: 1.2rem;
+}
+.center-text {
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.article {
+  padding: 5%;
+
+}
+
+img {
+  position: relative;
+  right: 50px;
+  bottom: 25px;
+}
+
+.col-half {
+  width: 45%;
+}
+
+.col-full {
+  width: 100%;
+}
+
+.col-one-fifth {
+  width: calc(100% / 5);
+}
+
+
+.col-four-fifths {
+  width: calc(400% / 5);
+}
+
+
+.center-text {
+  text-align: center;
+}
+
+button {
+  text-align: center;
+  margin-bottom: 100px;
+  font-size: 19px;
+  width: 250px;
+  height: 50px;
+  border: 2px solid #d14c45;
+  font-weight:600;
+  background-color: transparent;
+  color: #d14c45;
+  padding-left: auto;
+  padding-right: auto;
+}
+
+button:hover {
+  background-color:#d14c45;
+  color: white;
+  border: 5px solid rgb(160, 0, 80);
+}
