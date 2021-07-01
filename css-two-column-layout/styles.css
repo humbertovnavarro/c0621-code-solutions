@@ -8,9 +8,9 @@ p {
   line-height: 150%;
 }
 .main-description {
-  padding-right: 19%;
-  padding-left: 19%;
-  margin-bottom: 1rem;
+  padding-right: 13%;
+  padding-left: 13%;
+  margin-bottom: 4rem;
 }
 
 .main-header {
@@ -33,6 +33,10 @@ p {
   width: 70%;
 }
 
+.space-between {
+  justify-content: space-between;
+}
+
 .article {
   padding: 5%;
 
@@ -40,13 +44,12 @@ p {
 
 img {
   position: relative;
-  right: 35px;
+  right: 50px;
   bottom: 25px;
 }
 
-
 .col-half {
-  width: 50%;
+  width: 45%;
 }
 
 .col-full {
@@ -56,6 +59,8 @@ img {
 .col-one-fifth {
   width: calc(100% / 5);
 }
+
+
 .col-four-fifths {
   width: calc(400% / 5);
 }
@@ -79,7 +84,7 @@ button {
   padding-right: auto;
 }
 
-button:hover {
+button :hover {
   background-color :#d14c45;
   color: white;
   border: 5px solid rgb(160, 0, 80);
