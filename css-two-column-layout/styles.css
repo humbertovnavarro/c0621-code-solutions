@@ -8,13 +8,13 @@ p {
   line-height: 150%;
 }
 .main-description {
-  padding-right: 21%;
-  padding-left: 21%;
+  padding-right: 19%;
+  padding-left: 19%;
   margin-bottom: 1rem;
 }
 
 .main-header {
-  font-size: 4rem;
+  font-size: 4.5rem;
   margin-top: 5rem;
   margin-bottom: 1.2rem;
 }
@@ -28,13 +28,13 @@ p {
 }
 
 .container {
-  padding-left: 5rem;
-  padding-right: 5rem;
-  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
 }
 
 .article {
-  padding: 10%;
+  padding: 5%;
 
 }
 
@@ -66,14 +66,13 @@ img {
 }
 
 button {
-  margin-top: 5rem;
-  margin-bottom: 5rem;
   text-align: center;
+  margin-bottom: 100px;
   font-size: 19px;
   width: 250px;
-  height: 60px;
-  border: 5px solid #d14c45;
-  font-weight: 800;
+  height: 50px;
+  border: 2px solid #d14c45;
+  font-weight:600;
   background-color: transparent;
   color: #d14c45;
   padding-left: auto;
