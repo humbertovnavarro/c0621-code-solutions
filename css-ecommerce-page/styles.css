@@ -1,0 +1,54 @@
+body {
+  font-family: 'DM Sans', sans-serif;
+}
+span {
+  line-height: 2;
+}
+
+.grey {
+  color: #d3d3d3;
+}
+
+.container {
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
+.col-fifth {
+  width: calc(100% / 5)
+}
+.col-full {
+  width: 100%;
+}
+
+.row {
+  display: flex;
+}
+
+.discount-before {
+  background-color: #fff2e7;
+}
+
+.discount-after {
+  text-decoration: line-through;
+}
+.line-right {
+  padding-right: 5px;
+  margin-right: 5px;
+  border-right: 1px solid #d3d3d3;
+}
+
+.item-div {
+  height: 600px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+h1 {
+  text-align: center;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
