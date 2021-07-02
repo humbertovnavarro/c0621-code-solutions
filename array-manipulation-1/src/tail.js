@@ -14,12 +14,6 @@
 
 function tail(array){
   var tail = [];
-  if(array.length < 1){
-    return [];
-  }
-  if(array.length === 1){
-    return array;
-  }
   for(var i = 1; i < array.length; i++){
     tail.push(array[i]);
   }
