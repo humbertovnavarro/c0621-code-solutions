@@ -10,12 +10,12 @@
   return false
 
 */
-function isPalindromic(string){
-  var reverse = "";
-  for(var i = string.length - 1; i >= 0;  i--){
+function isPalindromic(string) {
+  var reverse = '';
+  for (var i = string.length - 1; i >= 0; i--) {
     reverse += string[i];
   }
-  if(reverse.replace(' ', '') === string.replace(' ', '')){
+  if (reverse.replace(' ', '') === string.replace(' ', '')) {
     return true;
   }
   return false;
