@@ -1,0 +1,31 @@
+.page-light {
+  background-color: #fef9f1;
+}
+
+.page-dark {
+  background-color: black;
+}
+
+.bulb {
+  border: 0;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+}
+
+.light {
+  background-color: #faea84;
+  box-shadow: 0 -20px 10px 5px #fef5d3;
+}
+
+.dark {
+  background-color: #222224;
+  box-shadow: 0 -10px 10px 5px #0c0c0c;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15%;
+}
