@@ -13,17 +13,15 @@
     append word to words
 */
 
-
-function  capitalizeWords(string){
-  var output = "";
-  var word = "";
+function capitalizeWords(string) {
+  var output = '';
+  var word = '';
   var i = 0;
-  debugger;
-  while(i < string.length){
+  while (i < string.length) {
     word += string[i];
-    if(string[i] ===  " "){
+    if (string[i] === ' ') {
       output += word[0].toUpperCase() + word.substring(1).toLowerCase();
-      word = "";
+      word = '';
     }
     i++;
   }
