@@ -12,18 +12,14 @@
   return newstring
 */
 
-
-
-function swapChars(firstIndex,secondIndex,string){
-  var newString = "";
-  for(var i = 0; i < string.length; i++){
-    if(i === firstIndex){
+function swapChars(firstIndex, secondIndex, string) {
+  var newString = '';
+  for (var i = 0; i < string.length; i++) {
+    if (i === firstIndex) {
       newString += string[secondIndex];
-    }
-    else if(i === secondIndex){
+    } else if (i === secondIndex) {
       newString += string[firstIndex];
-    }
-    else{
+    } else {
       newString += string[i];
     }
   }
