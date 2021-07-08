@@ -60,7 +60,7 @@ function logKey(event) {
 }
 
 function score() {
-  challenge.wpm = challenge.text.length / (challenge.time / 1000) * 60 / 5;
+  challenge.wpm = Math.round(challenge.text.length / (challenge.time / 1000) * 60 / 5);
   var $reset = document.createElement('a');
   $reset.className = '.reset-button';
   $reset.href = 'index.html';
@@ -73,7 +73,7 @@ function score() {
   } else {
     $subSubHeader.className = 'typed';
   }
-  $subHeader.textContent = challenge.time / 1000 + 's';
+  $subHeader.textContent = Math.round(challenge.time / 1000) + 's';
   $header.textContent = challenge.wpm + ' WPM';
   document.body.appendChild($header);
   document.body.appendChild($subHeader);
