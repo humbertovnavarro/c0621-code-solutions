@@ -1,3 +1,14 @@
+var challengeString = 'The quick brown fox jumps over the lazy dog.';
+var challenge = NewChallenge(challengeString);
+
+// Scoreboard
+var $reset = document.createElement('button');
+var $header = document.createElement('h1');
+var $subHeader = document.createElement('h2');
+var $subSubHeader = document.createElement('h3');
+
+document.addEventListener('keydown', logKey);
+
 function NewChallenge(string) {
   var challenge = {};
   challenge.complete = false;
@@ -20,8 +31,6 @@ function NewChallenge(string) {
   challenge.index = 0;
   return challenge;
 }
-var challenge = NewChallenge('The quick brown fox jumps over the lazy dog.');
-document.addEventListener('keydown', logKey);
 function logKey(event) {
   if (event.key.length > 1 || challenge.complete) {
     return;
@@ -59,19 +68,28 @@ function logKey(event) {
   }
 }
 
+function reset(event) {
+  challenge.div.innerHTML = '';
+  challenge = NewChallenge(challengeString);
+  $header.remove();
+  $subHeader.remove();
+  $subSubHeader.remove();
+  $reset.remove();
+}
+
 function score() {
   challenge.wpm = Math.round(challenge.text.length / (challenge.time / 1000) * 60 / 5);
-  var $reset = document.createElement('a');
-  $reset.className = '.reset-button';
-  $reset.href = 'index.html';
-  var $header = document.createElement('h1');
-  var $subHeader = document.createElement('h2');
-  var $subSubHeader = document.createElement('h3');
-  $subSubHeader.textContent = challenge.errors + ' error(s)';
-  if (challenge.errors > 0) {
+  $reset.addEventListener('click', reset);
+  $reset.className = 'reset-button';
+  $reset.textContent = 'RESET';
+  if (challenge.errors > 1) {
     $subSubHeader.className = 'red';
-  } else {
+    $subSubHeader.textContent = challenge.errors + ' errors';
+  } else if (challenge.errors <= 0) {
     $subSubHeader.className = 'typed';
+    $subSubHeader.textContent = challenge.errors + ' errors';
+  } else {
+    $subSubHeader.textContent = challenge.errors + ' error';
   }
   $subHeader.textContent = Math.round(challenge.time / 1000) + 's';
   $header.textContent = challenge.wpm + ' WPM';
