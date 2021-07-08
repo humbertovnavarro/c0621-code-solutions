@@ -1,0 +1,56 @@
+body {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 20px;
+  text-align: center;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.container {
+  margin-top: 20%;
+}
+
+.typed {
+  color: green;
+  transition: font-size 1s;
+}
+
+.reset-button {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 20px;
+  background-color: yellowgreen;
+  border: none;
+  width: 200px;
+  height: 50px;
+  transition: background-color 1s;
+}
+
+.reset-button:hover {
+  background-color: yellow;
+}
+
+.cursor {
+  text-decoration: underline;
+}
+
+.red {
+  color: red;
+}
+
+.error {
+  color: red;
+  background-color: lightpink;
+  transition: font-size 1s;
+}
+
+.big {
+  font-size: 24px;
+}
+
+.chunky {
+  font-size: 30px;
+}
+
+.huge {
+  font-size: 80px;
+}
