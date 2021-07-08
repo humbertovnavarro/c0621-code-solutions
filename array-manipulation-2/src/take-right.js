@@ -7,12 +7,12 @@
   return output
 */
 
-function takeRight(array,count){
+function takeRight(array, count) {
   var output = [];
-  if(count > array.length){
-    return [];
+  if (count > array.length) {
+    return array;
   }
-  for(var i = array.length - count; i < array.length; i++){
+  for (var i = array.length - count; i < array.length; i++) {
     output.push(array[i]);
   }
   return output;

@@ -14,22 +14,20 @@
     return output
 */
 
-function chunk(array,size){
-  debugger;
+function chunk(array, size) {
   var output = [];
   var chunk = [];
   var chunkCounter = 0;
-  for(var i = 0; i < array.length; i++){
+  for (var i = 0; i < array.length; i++) {
     chunk.push(array[i]);
     chunkCounter++;
-    if(chunkCounter === size){
+    if (chunkCounter === size) {
       output.push(chunk);
       chunk = [];
       chunkCounter = 0;
     }
-    console.log(array[i]);
   }
-  if(chunk.length > 0){
+  if (chunk.length > 0) {
     output.push(chunk);
   }
   return output;

@@ -10,12 +10,12 @@
   return output
 
 */
-function take(array,count){
+function take(array, count) {
   var output = [];
   if (count > array.length) {
-    return [];
+    return array;
   }
-  for(var i = 0; i < count; i++){
+  for (var i = 0; i < count; i++) {
     output.push(array[i]);
   }
   return output;
