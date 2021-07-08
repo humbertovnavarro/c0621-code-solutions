@@ -1,0 +1,42 @@
+body {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 20px;
+  text-align: center;
+}
+
+.container {
+  margin-top: 20%;
+}
+
+.typed {
+  color: green;
+}
+
+.cursor {
+  text-decoration: underline;
+}
+
+.red {
+  color: red;
+}
+
+.error {
+  color: red;
+  background-color: lightpink;
+}
+
+.big {
+  font-size: 24px;
+}
+
+.chunky {
+  font-size: 30px;
+}
+
+.huge {
+  font-size: 80px;
+}
+
+.reset-button {
+  text-decoration: none;
+}
