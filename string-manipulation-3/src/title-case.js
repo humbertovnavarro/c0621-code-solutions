@@ -1,4 +1,5 @@
 /* exported titleCase */
+// check if the string is a minor word, return true if true, otherwise return false
 function isMinorWord(string) {
   if (!string) {
     return;
@@ -40,11 +41,30 @@ function isMinorWord(string) {
       return false;
   }
 }
+/*
+  iterate through each index of the string,
+    if we encounter a delimeter,
+      check if we have a force space in the queue,
+        if we do decrement force by one
+      if we encounter a colon
+        add two force space onto the queue
+      else if we encounter a space,
+        set the addon to space
+      else if we encounter a dash
+      add two force space onto the queue
+      set addon to dash
+      if we are on the first word, or we have force in qeue,
+        capitalize the first word with force set to true and append to output
+      else
+        capitlize the first word with force set to false and append to output
+      set the word to empty string
+    else
+      add string at i to word
+    add the remaining word but capitalized to output
+
+*/
 
 function titleCase(string) {
-  if (!string) {
-    return;
-  }
   var word = '';
   var output = '';
   var first = true;
@@ -80,7 +100,7 @@ function titleCase(string) {
   output += capitalize(word);
   return output;
 }
-
+// Capitalize according to title format.
 function capitalize(string, force = false) {
   if (!string) {
     return;
