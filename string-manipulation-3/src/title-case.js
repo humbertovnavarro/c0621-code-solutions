@@ -1,21 +1,8 @@
 /* exported titleCase */
-function capitalize(string, firstWord = false) {
-  var testString = string.toLowerCase();
-  if (testString === 'javascript') {
-    return 'JavaScript';
-  }
-  if (testString === 'api') {
-    return 'API';
-  }
-  if (!firstWord) {
-    if (isMinorWord(string)) {
-      return string;
-    }
-  }
-  return string[0].toUpperCase() + string.substring(1);
-}
-
 function isMinorWord(string) {
+  if (!string) {
+    return;
+  }
   switch (string.toLowerCase()) {
     case 'and':
       return true;
@@ -55,28 +42,60 @@ function isMinorWord(string) {
 }
 
 function titleCase(string) {
+  if (!string) {
+    return;
+  }
+  var word = '';
   var output = '';
-  var tempWord = '';
-  var tempWords = [];
-  var words = string.split(' ');
+  var first = true;
+  var force = 0;
+  var addOn = '';
   for (var i = 0; i < string.length; i++) {
-    if (words[i].indexOf(':') !== -1) {
-      tempWord = words[i].substring(0, words[i].length - 2);
-      words[i + 1] = capitalize(words[i + 1]);
-      tempWord += ':';
-      words[i] = tempWord;
-    } else if (words[i].indexOf('-') !== -1) {
-      tempWords = words[i].split('-');
-      tempWord = '';
-      tempWord = capitalize(tempWords[0]) + '-' + capitalize(tempWords[1]);
-      words[i] = tempWord;
-    } else if (i === 0) {
-      words[0] = capitalize(words[0], true);
-    }
-    output += words[i];
-    if (i < string.length - 1) {
-      output += ' ';
+    if (string[i] === ' ' || string[i] === ':' || string[i] === '-') {
+      addOn = '';
+      if (force > 0) {
+        force--;
+      }
+      if (string[i] === ':') {
+        force += 2;
+        addOn = ': ';
+        i++;
+      } else if (string[i] === ' ') {
+        addOn = ' ';
+      } else if (string[i] === '-') {
+        force += 2;
+        addOn = '-';
+      }
+      if (first || force > 0) {
+        output += capitalize(word, true) + addOn;
+        first = false;
+      } else {
+        output += capitalize(word, false) + addOn;
+      }
+      word = '';
+    } else {
+      word += string[i];
     }
   }
+  output += capitalize(word);
   return output;
+}
+
+function capitalize(string, force = false) {
+  if (!string) {
+    return;
+  }
+  var compare = string.toLowerCase();
+  if (compare === 'javascript') {
+    return 'JavaScript';
+  }
+  if (compare === 'api') {
+    return 'API';
+  }
+  if (force) {
+    return string[0].toUpperCase() + string.substring(1).toLowerCase();
+  } else if (!isMinorWord(string)) {
+    return string[0].toUpperCase() + string.substring(1).toLowerCase();
+  }
+  return string.toLowerCase();
 }
