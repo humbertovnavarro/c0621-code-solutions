@@ -1,18 +1,18 @@
 var library = [
   {
-    isbn: '',
-    title: '',
-    author: ''
+    isbn: '43782910471',
+    title: 'JavaScript & Jquery',
+    author: 'Duckett, John'
   },
   {
-    isbn: '',
-    title: '',
-    author: ''
+    isbn: '437829104712',
+    title: 'HTML & CSS',
+    author: 'Duckett, John'
   },
   {
-    isbn: '',
-    title: '',
-    author: ''
+    isbn: '437829104715',
+    title: 'The Cat and the Hat',
+    author: 'Dr. Seuss'
   }
 ];
 console.log('Value of library:', library);
