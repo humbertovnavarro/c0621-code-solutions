@@ -1,7 +1,6 @@
 /* exported isAnagram */
 
 // Check if the occurences of each letter in string one, are the same as string two
-
 function isAnagram(firstString, secondString) {
   var stringOne = getOccurences(firstString);
   var stringTwo = getOccurences(secondString);
