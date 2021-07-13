@@ -1,4 +1,5 @@
 /* exported reverseWords */
+
 function reverseWords(string) {
   var reverse = '';
   var words = string.split(' ');

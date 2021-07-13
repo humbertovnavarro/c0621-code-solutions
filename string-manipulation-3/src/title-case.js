@@ -1,9 +1,11 @@
 /* exported titleCase */
 // check if the string is a minor word, return true if true, otherwise return false
+
 function isMinorWord(string) {
   if (!string) {
     return;
   }
+
   switch (string.toLowerCase()) {
     case 'and':
       return true;
