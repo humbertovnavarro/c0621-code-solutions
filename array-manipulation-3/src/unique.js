@@ -1,17 +1,18 @@
 /* exported unique */
 function unique(array) {
   var output = [];
+  var found = [];
   for(var i = 0; i < array.length; i++) {
-    if(inArray(array[i] > 2))
-  }
-}
-
-function inArray(item, array) {
-  var count = 0;
-  for(var i = 0; i < array.length; i++){
-    if(array[i] === item) {
-      count++;
+    var unique = true;
+    for(var j = 0; j < found.length; j++) {
+      if(array[i] === found[j]) {
+        unique = false;
+      }
+    }
+    if(unique) {
+      output.push(array[i]);
+      found.push(array[i]);
     }
   }
-  return count;
+  return output;
 }
