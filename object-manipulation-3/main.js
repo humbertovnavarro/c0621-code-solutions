@@ -36,7 +36,7 @@ Table.prototype.dealAll = function(amount){
 
 function Player(name){
   this.hand = [];
-  this.score = function(){
+  this.scorePoker = function(){
     var total = 0;
     for(var i = 0; i < this.hand.length; i++){
       total += this.hand[i].value;
@@ -44,7 +44,6 @@ function Player(name){
     return total;
   };
   this.name = name;
-  //I coded it as if the cards were being score like in poker and I coded myself into a corner, so heres a function to adapt the deck/card data model to the game described.
   this.scoreOMT = function(){
     var score = 0;
     for(var i = 0; i < this.hand.length; i++){
