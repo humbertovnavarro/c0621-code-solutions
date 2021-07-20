@@ -12,6 +12,5 @@ function zip(first,second) {
     out.push(pair);
     pair = [];
   }
-  console.log('Value of out:', out);
   return out;
 }
