@@ -1,0 +1,59 @@
+.container {
+  transition: color 10s;
+  margin-top: 15%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  height: 40%;
+  border: 5px solid black;
+}
+
+.padding-bottom-rem {
+  padding-bottom: 1rem;
+}
+
+.column-full {
+  width: 100%;
+}
+
+.dot-container {
+  width: 25%;
+}
+
+.column-half {
+  width: 50%;
+}
+
+.row {
+  display: flex;
+}
+
+button {
+  margin: 2rem;
+  width: 2rem;
+  height: 3rem;
+  background-color: rgb(0, 0, 0, 0);
+  border: 0;
+  transition: color 0.25s;
+}
+
+button:hover {
+  color: darkgrey;
+}
+
+.image-container img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.space-between {
+  justify-content: space-between;
+}
