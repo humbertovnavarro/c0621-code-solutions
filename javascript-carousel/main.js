@@ -13,19 +13,21 @@ var $image = document.querySelector('.carousel img');
 var $dots = document.querySelectorAll('.carousel .fa-circle');
 $dots[index].classList.replace('far', 'fas');
 $carousel.addEventListener('click', handleCarouselClick);
-
 var autoPan = setInterval(panImage, panSpeed);
-var coolDown = null;
 
 function handleCarouselClick(event) {
   if (event.target.getAttribute('data-control') === 'left') {
+    resetTimer();
     panImage('left');
   } else if (event.target.getAttribute('data-control') === 'right') {
     panImage('right');
+    resetTimer();
   }
+}
+
+function resetTimer() {
   clearInterval(autoPan);
-  clearInterval(coolDown);
-  coolDown = setTimeout(resumeAutoPan, panSpeed);
+  autoPan = setInterval(panImage, panSpeed);
 }
 
 function panImage(direction) {
@@ -45,8 +47,4 @@ function panImage(direction) {
   }
   $image.src = 'images/' + images[index];
   $dots[index].classList.replace('far', 'fas');
-}
-
-function resumeAutoPan() {
-  autoPan = setInterval(panImage, panSpeed);
 }
