@@ -1,11 +1,18 @@
 .container {
   transition: color 10s;
-  margin-top: 15%;
+  margin-top: 10%;
   margin-left: auto;
   margin-right: auto;
-  width: 30%;
-  height: 40%;
+  width: 40%;
   border: 5px solid black;
+  box-shadow: inset 1px 1px 100px black;
+  background-image: repeating-linear-gradient(rgb(106, 106, 143), rgb(168, 168, 223));
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(168, 168, 233);
 }
 
 .padding-bottom-rem {
@@ -32,18 +39,23 @@ button {
   margin: 2rem;
   width: 2rem;
   height: 3rem;
-  background-color: rgb(0, 0, 0, 0);
   border: 0;
-  transition: color 0.25s;
+  background-color: rgb(0, 0, 0, 0);
 }
 
-button:hover {
-  color: darkgrey;
+.image-container {
+  width: 40rem;
+  position: relative;
 }
 
 .image-container img {
   width: 100%;
-  object-fit: cover;
+  height: 100%;
+  object-fit: scale-down;
+}
+
+.margin-rem {
+  margin: 1rem;
 }
 
 .items-center {
@@ -56,4 +68,39 @@ button:hover {
 
 .space-between {
   justify-content: space-between;
+}
+
+.fa-circle {
+  transition: all 0.5s;
+}
+
+.fas {
+  transition: all 0.5s;
+  color: rgb(223, 85, 85);
+}
+
+.fas:hover {
+  color: red;
+}
+
+.fas:active {
+  color: white;
+}
+
+.far {
+  color: rgb(255, 0, 0);
+}
+
+i {
+  transform: scale(1.5);
+}
+
+@media only screen and (max-width: 900px) {
+  i {
+    transform: scale(2);
+  }
+
+  .container {
+    width: 90%;
+  }
 }
