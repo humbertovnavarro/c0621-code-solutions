@@ -1,0 +1,284 @@
+    1  ls
+    2  exit
+    3  clear
+    4  git status
+    5  clear
+    6  ls
+    7  cd repos/
+    8  ls
+    9  cd c0621-code-solutions/
+   10  git status
+   11  clear
+   12  exit
+   13  clear
+   14  htop
+   15  clear
+   16  exit
+   17  clear
+   18  htop
+   19  clear
+   20  exit
+   21  ls
+   22  cd repos/
+   23  ls
+   24  cat README.md 
+   25  rm README.md 
+   26  ls
+   27  cd testing/
+   28  ls
+   29  cd ..
+   30  ls
+   31  clear
+   32  exit
+   33  clear
+   34  ls
+   35  clear
+   36  cd repos/
+   37  ls
+   38  cd c0621-code-solutions/
+   39  clear
+   40  ls
+   41  clear
+   42  git status
+   43  clear
+   44  ls
+   45  clear
+   46  ls
+   47  clear
+   48  ls
+   49  clear
+   50  git status
+   51  git add http-messages/
+   52  git status
+   53  cd http-messages/
+   54  la
+   55  ls
+   56  git status
+   57  clear
+   58  git commit -m "starter files"
+   59  git config --global user.email "kamaii199827@gmail.com"
+   60  git config --global user.name "humbertovnavarro"
+   61  cd ~
+   62  cd .ssh
+   63  ls
+   64  cat github_rsa.pub 
+   65  cat id_rsa.pub
+   66  clear
+   67  cd ..
+   68  ls
+   69  clear
+   70  cd repos/
+   71  ls
+   72  clear
+   73  ls
+   74  cd c0621-code-solutions/
+   75  ls
+   76  clear
+   77  cd http-messages/
+   78  git status
+   79  git push origin http-messages 
+   80  git status
+   81  clear
+   82  http 
+   83  http https://example.com
+   84  http https://example.com --verbose
+   85  http --body GET https://jsonplaceholder.typicode.com/users > users.json
+   86  ls
+   87  code users.json 
+   88  ls
+   89  clear
+   90  cat users.json 
+   91  http --body GET https://example.com > index.html
+   92  git status
+   93  git add index.html 
+   94  git add users.json 
+   95  git status
+   96  clear
+   97  git commit -m "ez"
+   98  git push origin http-messages 
+   99  clear
+  100  ls
+  101  cat index.html && cat users.json 
+  102  clear
+  103  http
+  104  http --json lfz-lms.herokuapp.com
+  105  http lfz-lms.herokuapp.com
+  106  http --verbose lfz-lms.herokuapp.com
+  107  clear
+  108  curl
+  109  clear
+  110  http https://twitch.tv
+  111  http https://lfz-lms.herokuapp.com
+  112  http example.com
+  113  http example.com --verbose
+  114  http --body POST https://jsonplaceholder.typicode.com/users
+  115  http --verbose --body POST https://jsonplaceholder.typicode.com/users
+  116  clear
+  117  http --verbose example.com
+  118  http GET --verbose example.com
+  119  http --headers
+  120  http --headers kamaii.xyz
+  121  http minecraft.kamaii.xyz
+  122  clear
+  123  ssh kamaii.xyz
+  124  clear
+  125  cd ~
+  126  clear
+  127  cd ~
+  128  ls
+  129  clear
+  130  cd ~
+  131  clear
+  132  cat .bashrc 
+  133  nano .bashrc 
+  134  clear
+  135  sudo apt install zsh
+  136  clear
+  137  sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  138  clear
+  139  curl
+  140  clear
+  141  htop
+  142  pkill python3
+  143  htop
+  144  #!/bin/sh
+  145  #
+  146  # This script should be run via curl:
+  147  #   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  148  # or via wget:
+  149  #   sh -c "$(wget -qO- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  150  # or via fetch:
+  151  #   sh -c "$(fetch -o - https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  152  #
+  153  # As an alternative, you can first download the install script and run it afterwards:
+  154  #   wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+  155  #   sh install.sh
+  156  #
+  157  # You can tweak the install behavior by setting variables when running the script. For
+  158  # example, to change the path to the Oh My Zsh repository:
+  159  #   ZSH=~/.zsh sh install.sh
+  160  #
+  161  # Respects the following environment variables:
+  162  #   ZSH     - path to the Oh My Zsh repository folder (default: $HOME/.oh-my-zsh)
+  163  #   REPO    - name of the GitHub repo to install from (default: ohmyzsh/ohmyzsh)
+  164  #   REMOTE  - full remote URL of the git repo to install (default: GitHub via HTTPS)
+  165  #   BRANCH  - branch to check out immediately after install (default: master)
+  166  #
+  167  # Other options:
+  168  #   CHSH       - 'no' means the installer will not change the default shell (default: yes)
+  169  #   RUNZSH     - 'no' means the installer will not run zsh after the install (default: yes)
+  170  #   KEEP_ZSHRC - 'yes' means the installer will not replace an existing .zshrc (default: no)
+  171  #
+  172  # You can also pass some arguments to the install script to set some these options:
+  173  #   --skip-chsh: has the same behavior as setting CHSH to 'no'
+  174  #   --unattended: sets both CHSH and RUNZSH to 'no'
+  175  #   --keep-zshrc: sets KEEP_ZSHRC to 'yes'
+  176  # For example:
+  177  #   sh install.sh --unattended
+  178  # or:
+  179  #   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+  180  #
+  181  set -e
+  182  # Track if $ZSH was provided
+  183  custom_zsh=${ZSH:+yes}
+  184  # Default settings
+  185  ZSH=${ZSH:-~/.oh-my-zsh}
+  186  REPO=${REPO:-ohmyzsh/ohmyzsh}
+  187  REMOTE=${REMOTE:-https://github.com/${REPO}.git}
+  188  BRANCH=${BRANCH:-master}
+  189  # Other options
+  190  CHSH=${CHSH:-yes}
+  191  RUNZSH=${RUNZSH:-yes}
+  192  KEEP_ZSHRC=${KEEP_ZSHRC:-no}
+  193  command_exists() { command -v "$@" >/dev/null 2>&1; }
+  194  fmt_error() {   printf '%sError: %s%s\n' "$BOLD$RED" "$*" "$RESET" >&2; }
+  195  fmt_underline() {   printf '\033[4m%s\033[24m\n' "$*"; }
+  196  fmt_code() {
+  197    printf '`\033[38;5;247m%s%s`\n' "$*" "$RESET"; }
+  198  setup_color() {
+  199  if [ -t 1 ]; then tf '\033[31m')
+  200  clear
+  201  git status
+  202  clear
+  203  ls
+  204  cd repos/
+  205  httpie
+  206  htttpie
+  207  http
+  208  clear
+  209  exi
+  210  ping 1.1.1.1
+  211  ip addr
+  212  which ip
+  213  clear
+  214  ipconfig
+  215  ping
+  216  ip addr
+  217  clear
+  218  ls
+  219  cd ~
+  220  ls
+  221  cd repos/
+  222  ls
+  223  mkdir bash-project
+  224  ls
+  225  cd bash-project/
+  226  ls
+  227  touch setup.sh
+  228  l
+  229  chmod +X setup.sh 
+  230  ls
+  231  code setup.sh 
+  232  code 
+  233  exit
+  234  clear
+  235  which
+  236  clear
+  237  ls
+  238  cd repos/
+  239  ls
+  240  cd c0621-code-solutions/
+  241  git checkout -b command-line-basics
+  242  clear
+  243  ls
+  244  clear
+  245  cd command-line-basics/
+  246  pwd
+  247  man man
+  248  man cat
+  249  ls
+  250  cat impatience.txt laziness.txt hubris.txt
+  251  cat impatience.txt laziness.txt hubris.txt > three-virtues.txt
+  252  cat three-virtues.txt 
+  253  man ls
+  254  ls -aF lfz-staff > lfz-staff/contents.txt
+  255  cat lfz-staff/contents.txt 
+  256  man pwd
+  257  pwd > i-was-here.txt
+  258  ls
+  259  cat i-was-here.txt 
+  260  man echo
+  261  echo 'Hello, World' > hello.txt
+  262  ls 
+  263  cat hello.txt 
+  264  man touch
+  265  man mkdir
+  266  mkdir parent
+  267  ls 
+  268  mkdir -p parent/child/grandchild
+  269  touch .gitkeep
+  270  ls -a .gitkeep 
+  271  ls
+  272  echo 'parent/child/grandchild' > .gitkeep 
+  273  ls
+  274  mv .gitkeep parent/child/grandchild/
+  275  ls
+  276  nano parent/child/grandchild/
+  277  nano parent/child/grandchild/.gitkeep 
+  278  ls
+  279  rm lol.txt 
+  280  rm -r kill-me/
+  281  man cp
+  282  cp and-then.txt  no-and-then.txt
+  283  cat no-and-then.txt no-and-then.txt 
+  284  history > command-history.txt
