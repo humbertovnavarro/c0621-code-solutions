@@ -16,4 +16,3 @@ if (entries.changes) {
     }
   });
 }
-console.log(entries.serialize());
