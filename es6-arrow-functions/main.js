@@ -7,7 +7,7 @@ const jokester = {
     $jokeForm.classList.add('d-none');
     const $introStatement = this.renderJokePhrase('Hey Flash...');
     this.appendJokePhrase($introStatement);
-    setTimeout( () => {
+    setTimeout(() => {
       const $jokeSetup = this.renderJokePhrase(setup);
       this.appendJokePhrase($jokeSetup);
       setTimeout(() => {
@@ -42,5 +42,4 @@ function handleJokeSubmission(event) {
   const { setup, punchline } = event.target.elements;
   jokester.tellJoke(setup.value, punchline.value);
 }
-
 $jokeForm.addEventListener('submit', handleJokeSubmission);
