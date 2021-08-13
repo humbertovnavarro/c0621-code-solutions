@@ -1,8 +1,6 @@
 const express = require('express');
 const app = express();
 app.use(function (req, res, next) {
-  console.log('Time:', Date.now());
-  console.log('Request method:', req.method);
   res.send('Hi');
   next();
 });
