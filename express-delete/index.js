@@ -22,7 +22,13 @@ const grades = {
 const express = require('express');
 const app = express();
 const json = express.json();
-
+app.get('/api/grades', (req, res) => {
+  const sendGrades = [];
+  for (const key in grades) {
+    sendGrades.push(grades[key]);
+  }
+  res.json(sendGrades);
+});
 app.delete('/api/grades/:id', (req, res) => {
   delete grades[req.params.id];
   res.sendStatus(204);
