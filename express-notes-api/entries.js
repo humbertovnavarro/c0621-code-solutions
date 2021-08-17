@@ -35,8 +35,7 @@ class Entries {
   }
 
   // Saves the current state of the notes to a file
-  flush() {
-    let error = null;
+  flush(callback) {
     if (!this.changes) {
       return;
     }
@@ -44,12 +43,6 @@ class Entries {
       nextId: this.nextId,
       notes: this.notes
     };
-    fs.writeFile('./data.json', JSON.stringify(data, null, 2), err => {
-      if (err) {
-        error = err;
-        throw err;
-      }
-    });
-    return error;
+    fs.writeFile('./data.json', JSON.stringify(data, null, 2), err => { callback(err); });
   }
 };

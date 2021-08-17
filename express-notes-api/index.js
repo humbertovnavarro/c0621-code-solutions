@@ -30,15 +30,17 @@ app.post('/api/notes/', (req, res) => {
     res.statusCode = 400;
     res.json({ error: 'No content included' });
   } else {
-    const entry = entries.add(req.body);
-    const error = entries.flush();
-    if (error) {
-      res.statusCode = 500;
-      res.json({ error: 'An unexpected error occured.' });
-    } else {
-      res.statusCode = 201;
-      res.json(entry);
-    }
+    const sendEntry = entries.add(req.body);
+    const callback = error => {
+      if (error) {
+        res.statusCode = 500;
+        res.json({ error: 'An unexpected error occured.' });
+      } else {
+        res.statusCode = 201;
+        res.json(sendEntry);
+      }
+    };
+    entries.flush(callback);
   }
 });
 
@@ -53,15 +55,17 @@ app.delete('/api/notes/:id', (req, res) => {
       res.statusCode = 404;
       res.json({ error: `Entry ${id} not found` });
     } else {
-      entries.deleteById(id);
-      const error = entries.flush();
-      if (error) {
-        res.statusCode = 500;
-        res.json({ error: 'An unexpected error occured.' });
-      } else {
-        res.statusCode = 204;
-        res.send('');
-      }
+      entries.deleteById(id, req.body);
+      const callback = error => {
+        if (error) {
+          res.statusCode = 500;
+          res.json({ error: 'An unexpected error occured.' });
+        } else {
+          res.statusCode = 204;
+          res.send('');
+        }
+      };
+      entries.flush(callback);
     }
   }
 });
@@ -82,14 +86,16 @@ app.put('/api/notes/:id', (req, res) => {
       res.json({ error: `Entry ${id} not found` });
     } else {
       const sendEntry = entries.updateById(id, req.body);
-      const error = entries.flush();
-      if (error) {
-        res.statusCode = 500;
-        res.json({ error: 'An unexpected error occured.' });
-      } else {
-        res.statusCode = 200;
-        res.json(sendEntry);
-      }
+      const callback = error => {
+        if (error) {
+          res.statusCode = 500;
+          res.json({ error: 'An unexpected error occured.' });
+        } else {
+          res.statusCode = 200;
+          res.json(sendEntry);
+        }
+      };
+      entries.flush(callback);
     }
   }
 });
