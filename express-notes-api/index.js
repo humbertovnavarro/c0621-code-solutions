@@ -10,10 +10,10 @@ app.get('/api/notes', (req, res) => {
 });
 
 app.get('/api/notes/:id', (req, res) => {
-  const id = Number.parseInt(req.params.id);
-  if (id < 0) {
+  const id = Number.parseInt(req.params.id, 10);
+  if (id < 0 || Number.isNaN(id)) {
     res.statusCode = 400;
-    res.json({ error: 'Invalid ID' });
+    res.json({ error: 'Id must be a positive integer' });
   }
   const entry = entries.notes[id];
   if (entry) {
@@ -27,24 +27,26 @@ app.get('/api/notes/:id', (req, res) => {
 
 app.post('/api/notes/', (req, res) => {
   if (!req.body.content) {
-    res.statusCode = 201;
+    res.statusCode = 400;
     res.json({ error: 'No content included' });
+  } else {
+    const entry = entries.add(req.body);
+    const error = entries.flush();
+    if (error) {
+      res.statusCode = 500;
+      res.json({ error: 'An unexpected error occured.' });
+    } else {
+      res.statusCode = 201;
+      res.json(entry);
+    }
   }
-  const entry = entries.add(req.body);
-  const error = entries.flush();
-  if (error) {
-    res.statusCode = 500;
-    res.json({ error: 'An unexpected error occured.' });
-  }
-  res.statusCode = 200;
-  res.json(entry);
 });
 
 app.delete('/api/notes/:id', (req, res) => {
-  const id = Number.parseInt(req.params.id);
-  if (id < 0) {
+  const id = Number.parseInt(req.params.id, 10);
+  if (id < 0 || Number.isNaN(id)) {
     res.statusCode = 400;
-    res.json({ error: 'Invalid ID' });
+    res.json({ error: 'Number must be a positive integer' });
   } else {
     const entry = entries.notes[id];
     if (!entry) {
@@ -52,22 +54,27 @@ app.delete('/api/notes/:id', (req, res) => {
       res.json({ error: `Entry ${id} not found` });
     } else {
       entries.deleteById(id);
-      entries.flush();
-      res.status = 204;
-      res.send('');
+      const error = entries.flush();
+      if (error) {
+        res.statusCode = 500;
+        res.json({ error: 'An unexpected error occured.' });
+      } else {
+        res.statusCode = 204;
+        res.send('');
+      }
     }
   }
 });
 
 app.put('/api/notes/:id', (req, res) => {
-  const id = Number.parseInt(req.params.id);
+  const id = Number.parseInt(req.params.id, 10);
   const content = req.body.content;
   if (!content) {
     res.statusCode = 400;
     res.json({ error: 'Content is a required field.' });
-  } else if (id < 0) {
+  } else if (id < 0 || Number.isNaN(id)) {
     res.statusCode = 400;
-    res.json({ error: 'Invalid ID' });
+    res.json({ error: 'Id must be a positive integer' });
   } else {
     const entry = entries.notes[id];
     if (!entry) {
@@ -75,9 +82,14 @@ app.put('/api/notes/:id', (req, res) => {
       res.json({ error: `Entry ${id} not found` });
     } else {
       const sendEntry = entries.updateById(id, req.body);
-      entries.flush();
-      res.statusCode = 200;
-      res.json(sendEntry);
+      const error = entries.flush();
+      if (error) {
+        res.statusCode = 500;
+        res.json({ error: 'An unexpected error occured.' });
+      } else {
+        res.statusCode = 200;
+        res.json(sendEntry);
+      }
     }
   }
 });
