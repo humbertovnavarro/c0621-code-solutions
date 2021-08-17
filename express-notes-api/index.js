@@ -21,7 +21,7 @@ app.get('/api/notes/:id', (req, res) => {
     res.json(entry);
   } else {
     res.statusCode = 404;
-    res.json({ error: 'Entry not found' });
+    res.json({ error: `Entry ${id} not found` });
   }
 });
 
@@ -46,7 +46,7 @@ app.delete('/api/notes/:id', (req, res) => {
   const id = Number.parseInt(req.params.id, 10);
   if (id < 0 || Number.isNaN(id)) {
     res.statusCode = 400;
-    res.json({ error: 'Number must be a positive integer' });
+    res.json({ error: 'id must be a positive integer' });
   } else {
     const entry = entries.notes[id];
     if (!entry) {
