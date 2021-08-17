@@ -24,7 +24,9 @@ class Entries {
 
   updateById(noteId, content) {
     this.notes[noteId] = content;
+    this.notes[noteId].id = noteId;
     this.changes = true;
+    return this.notes[noteId];
   }
 
   deleteById(noteId) {
