@@ -14,11 +14,7 @@ app.get('/api/grades', (req, res) => {
   db.query(`
     select * from "grades"
   `).then(data => {
-    const results = [];
-    for (let i = 0; i < data.rows.length; i++) {
-      results.push(data.rows[i]);
-    }
-    res.json(results);
+    res.json(data.rows);
   }).catch(err => {
     console.error(err);
     res.status(500).json({ error: 'An unexpected error has occured.' });
@@ -86,7 +82,7 @@ app.delete('/api/grades/:gradeId', (req, res) => {
       if (data.rowCount === 0) {
         res.status(404).json({ error: 'grade not found' });
       } else {
-        res.status(204);
+        res.sendStatus(204);
       }
     }
   ).catch(
