@@ -1,0 +1,33 @@
+.hot-button {
+  font-size: 16px;
+  color: white;
+  width: 128px;
+  height: 50px;
+}
+
+.frozen {
+  background-color: darkblue;
+}
+
+.cool {
+  background-color: blue;
+}
+
+.warm {
+  background-color: red;
+}
+
+.hot {
+  background-color: orange;
+  color: black;
+}
+
+.sweltering {
+  background-color: yellow;
+  color: black;
+}
+
+.nuclear {
+  background-color: white;
+  color: black;
+}
