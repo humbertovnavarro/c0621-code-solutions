@@ -15,7 +15,7 @@ class Drawer extends React.Component {
     super(props);
     this.handleModalClick = this.handleModalClick.bind(this);
     this.handleButtonClick = this.handleButtonClick.bind(this);
-    this.state = { isOpen: true, isHidden: false };
+    this.state = { isOpen: false };
   }
 
   handleModalClick(e) {
@@ -24,14 +24,11 @@ class Drawer extends React.Component {
     }
     if (e.target.matches('.modal')) {
       this.setState({ isOpen: false });
-      setTimeout(() => {
-        this.setState({ isHidden: true });
-      }, 1000);
     }
   }
 
   handleButtonClick() {
-    this.setState({ isHidden: false, isOpen: true });
+    this.setState({ isOpen: true });
   }
 
   render() {
@@ -39,11 +36,10 @@ class Drawer extends React.Component {
       return <DrawerItem key={item.title} title={item.title} />;
     });
     const state = this.state.isOpen ? 'open' : 'close';
-    const hidden = this.state.isHidden ? { display: 'none' } : {};
     return (
     <div className={'drawer'}>
     <button onClick={this.handleButtonClick}><i className="fas fa-bars"></i></button>
-    <div onClick={this.handleModalClick} className={`modal ${state} ${hidden}`}>
+    <div onClick={this.handleModalClick} className={`modal ${state}`}>
       <div className={`drawer-container ${state}`}>
         <div className={'drawer'}>
             <h1>{this.props.title}</h1>
