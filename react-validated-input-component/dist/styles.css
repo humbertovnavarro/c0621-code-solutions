@@ -1,0 +1,18 @@
+.password-input p {
+  margin-top: 0.5rem;
+  color: red;
+}
+.password-input > div {
+  display: flex;
+  align-items: center;
+}
+.password-input > div > i {
+  margin-left: 0.5rem;
+}
+
+.fa-times {
+    color: red;
+}
+.fa-check {
+  color: green;
+}
