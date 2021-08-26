@@ -1,0 +1,83 @@
+h1 {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.modal {
+  transition: background-color 1s;
+  background-color: rgba(0, 0, 0, 0.596);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.modal.close {
+  background-color: transparent;
+  pointer-events: none;
+}
+
+.drawer-container {
+  font-family: sans-serif;
+  background-color: white;
+  width: 25%;
+  height: 100%;
+  position: relative;
+  transition: right 1s;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.596);
+  backdrop-filter: blur(2px);
+  backdrop-filter: grayscale(100%);
+}
+
+.drawer-container.close {
+  right: 100%;
+}
+
+.drawer-container.open {
+  right: 0;
+}
+
+.drawer ul {
+  padding: 0;
+  list-style: none;
+}
+
+.drawer h1 {
+  padding-top: 1rem;
+  padding-left: 1rem;
+}
+
+.drawer li {
+  font-size: large;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  height: 3rem;
+}
+
+.drawer li a {
+  padding-left: 1rem;
+}
+
+.drawer-item:hover {
+  width: 100%;
+  background-color: lightgray;
+}
+
+.drawer button:first-child {
+  display: absolute;
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  margin: 1rem;
+}
+
+.drawer button:first-child:active {
+  color: rgba(0, 0, 0, 0.596);
+  transform: translateX(2px);
+}
