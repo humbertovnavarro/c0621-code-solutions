@@ -21,12 +21,13 @@ const slides = [
 class Carousel extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { source: slides[0].src };
-    this.index = 0;
-    this.timedOut = false;
+    this.state = { source: slides[0].src, index: 0, timedOut: false };
     this.handleClick = this.handleClick.bind(this);
+  }
+
+  componentDidMount() {
     this.autoPan = setInterval(() => {
-      if (this.timedOut) {
+      if (this.state.timedOut) {
         return;
       }
       this.next();
@@ -34,34 +35,33 @@ class Carousel extends React.Component {
   }
 
   previous() {
-    this.index--;
-    if (this.index < 0) {
-      this.index = this.props.slides.length - 1;
+    let nextIndex = this.state.index - 1;
+    if (nextIndex < 0) {
+      nextIndex = this.props.slides.length - 1;
     }
-    this.setState({ source: slides[this.index].src });
+    this.setState({ source: slides[nextIndex].src, index: nextIndex });
   }
 
   update(index) {
-    this.index = Number.parseInt(index, 10);
-    this.setState({ source: slides[this.index].src });
+    const nextIndex = Number.parseInt(index, 10);
+    this.setState({ source: slides[nextIndex].src, index: nextIndex });
   }
 
   next() {
-    this.index++;
-    if (this.index > this.props.slides.length - 1) {
-      this.index = 0;
+    let nextIndex = this.state.index + 1;
+    if (nextIndex > this.props.slides.length - 1) {
+      nextIndex = 0;
     }
-    this.setState({ source: slides[this.index].src });
+    this.setState({ source: slides[nextIndex].src, index: nextIndex });
   }
 
   handleClick(event) {
-    this.timedOut = true;
+    this.setState({ timedOut: true });
     clearInterval(this.timeout);
-    this.timeout = setTimeout(() => { this.timedOut = false; }, 3000);
+    this.timeout = setTimeout(() => { this.setState({ timedOut: false }); }, 3000);
     if (event.target.dataset.index) {
       this.update(event.target.dataset.index);
-    }
-    if (event.target.dataset.control === 'left') {
+    } else if (event.target.dataset.control === 'left') {
       this.previous();
     } else if (event.target.dataset.control === 'right') {
       this.next();
@@ -72,7 +72,7 @@ class Carousel extends React.Component {
     const dots = [];
     for (let i = 0; i < this.props.slides.length; i++) {
       dots.push((
-        <i data-index={i} key={i} className={`fas fa-circle ${this.index === i ? 'active' : 'inactive'}`}></i>
+        <i data-index={i} key={i} className={`fas fa-circle ${this.state.index === i ? 'active' : 'inactive'}`}></i>
       ));
     }
     return (
