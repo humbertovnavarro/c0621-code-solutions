@@ -1,0 +1,53 @@
+body {
+  font-family: sans-serif;
+}
+
+.accordion {
+  width: fit-content;
+  list-style: none;
+  padding: 0;
+}
+
+.accordion-topic h1 {
+  margin: 0;
+  padding: 0.25rem;
+}
+
+.accordion-topic p {
+  margin: 0;
+  padding: 0.25rem;
+}
+
+.accordion-topic > div:nth-child(1) {
+  width: 100%;
+  border-radius: 5px;
+  margin: 1px;
+  background-color: rgb(202, 202, 202);
+  border: 2px solid black;
+  box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.219);
+}
+
+.accordion-topic > div:nth-child(2) {
+  width: 100%;
+  transition: height 0.2s, border 0.1s, background-color 0.3s;
+  height: 0;
+  overflow-y: scroll;
+  border-radius: 5px;
+  margin: 0;
+  border: 2px solid black;
+  clip: rect(0, 60px, 200px, 0);
+}
+
+.accordion-topic.closed > div:nth-child(2) {
+  background-color: rgb(202, 202, 202);
+  border: 0 solid transparent;
+  height: 0;
+}
+
+.accordion-topic.open > div:nth-child(2) {
+  height: 10rem;
+}
+
+.accordion-topic > div:nth-child(2) > p {
+  padding-left: 0.5rem;
+}
