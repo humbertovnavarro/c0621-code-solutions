@@ -1,0 +1,15 @@
+body {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  height: 90vh;
+  align-items: center;
+}
+
+img {
+  transition: transform 1s;
+}
+
+img:hover {
+  transform: rotate(360deg);
+}
