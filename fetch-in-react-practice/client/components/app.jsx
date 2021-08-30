@@ -55,7 +55,7 @@ export default class App extends React.Component {
        console.error(data.error);
        return;
      }
-     const newTodos = Array.prototype.concat(this.state.todos, [data]);
+     const newTodos = this.state.todos.concat(data);
      this.setState({todos: newTodos});
    }).catch(err => console.error(err));
   }
