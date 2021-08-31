@@ -41,7 +41,7 @@ app.post('/api/auth/sign-up', (req, res, next) => {
     db.query(`
       insert into users ("username", "hashedPassword")
       values ($1,$2)
-      returning *;
+      returning "createdAt", "userId", "username";
     `,[username, hashedPassword])
     .then(data =>{
       res.statusCode = 201;
