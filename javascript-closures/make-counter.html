@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const makeCounter = function() {
+      let privateCounter = 0;
+      function changeBy(value) {
+        privateCounter += value;
+        return privateCounter;
+      }
+      return {
+        increment: function() {
+          return changeBy(1);
+        },
+        decrement: function() {
+          return changeBy(-1);
+        },
+        incrementBy: function(value) {
+          if(value % 2 === 0) {
+            console.error('No even numbers, because I said so. Don\'t ask me why.');
+            return;
+          }
+          return changeBy(value);
+        },
+        get: function() {
+          return privateCounter;
+        }
+      }
+    }
+    const counter = makeCounter();
+    console.log(counter.get());
+    counter.increment();
+    console.log(counter.get());
+    counter.decrement();
+    console.log(counter.get());
+  </script>
+</body>
+</html>
