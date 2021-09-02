@@ -1,0 +1,64 @@
+
+Initialization.
+
+All the features begin with the loading of the DOM, after the DOM loads
+React renders the react element App into the element of id root.
+
+We then go into app.jsx, and into the constructor function where the app is
+initialized. We assign the user, wether or not the user is authorizing, and the
+window route to the state property of the React element. We then bind the value
+of this to the sign in and sign out functions in order to access the methods of
+the created instance in index.jsx. We then go into the render method for the App
+component,
+In the render method, if the user is not authorizing, we return null,
+which doesn't render anything, and exit the function. Otherwise, we assign values
+which belong to the component to access them a little easier instead of accessing
+them directly. We then create a React Element tree with an AppContext react element,
+a NavBar react element, and a PageContainer react element. The AppContent
+element provides the values specified in the variable contextValue as it's default values.
+It's important to note that AppContext was imported from /lib/app-context. We then
+go into our files that define these components, which takes us to our first feature.
+
+
+User can sign in:
+
+When the user clicks on the sign in button on the form, we call the handleSubmit
+method of the AuthForm element, using the onClick prop of the aformentioned button.
+we then prevent the default behavior of form submission, which is to refresh
+the page. We then create a POST request and set its headers to denote that it is
+a JSON request, and send the request to api/auth/sign-in, The server then
+initiates a sql query to grab the requested data, if the users authentication data is valid.
+We then take the resulting HTTP response data and parse it as JSON, we then take the resulting
+object and set the window location hash to the action variable. We check if
+the user and token values are truthy, and if they are, we call the method attached
+to the onSignIn prop of AuthForm with the results, which takes us to auth.jsx,
+where we set the onSignIn prop to the handleSignIn property of the context,
+which is derived from the App element, which takes us back to the handleSignIn
+of the App react component. Inside of this function, we take the results and
+store the jwt token in local storage, and set the state of the app with the user
+variable, which updates the app to reflect a logged in user.
+
+User can sign up:
+
+Sign up works in much the same way as sign in, except in the handleSubmit method
+we send the request to api/auth/sign-up, and on the server side we do an insert
+statement instead, and return the resulting row.
+
+User can stay signed in:
+
+The user can stay signed in, because in the ComponentDidMount function we call
+the function decodeToken on the token stored in local storage, if we get a value,
+this updates the app on start to reflect the logged in user, otherwise, its
+state is null which causes the app to display a login screen.
+
+
+User can sign out:
+
+When the user clicks on the sign out button, the function contained in the
+onClick prop in navbar.jsx is triggered, which contains the handleSignOut method
+from app.jsx, which was obtained by setting its value to the handleSignOut variable
+which was dereferenced from the context variable passed through app.jsx, which takes
+us to the handleSignOut method of the App component. Inside of this method we are
+removing the jwt token from local storage and setting the state of the user property
+of the state to null, which calls the render function, which displays the login
+page.
